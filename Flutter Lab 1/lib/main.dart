@@ -17,7 +17,8 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.green),
         useMaterial3: true,
       ),
-      home: const MyHomePage(title: "I'm making my first app, bro!"), //Heading displayed on screen
+      home: const MyHomePage(
+          title: "I'm making my first app, bro!"), //Heading displayed on screen
     );
   }
 }
@@ -42,6 +43,12 @@ class _MyHomePageState extends State<MyHomePage> {
       // _counter without calling setState(), then the build method would not be
       // called again, and so nothing would appear to happen.
       _counter++;
+    });
+  }
+
+  void _decrementCounter() {
+    setState(() {
+      _counter--;
     });
   }
 
@@ -80,7 +87,7 @@ class _MyHomePageState extends State<MyHomePage> {
           // TRY THIS: Invoke "debug painting" (choose the "Toggle Debug Paint"
           // action in the IDE, or press "p" in the console), to see the
           // wireframe for each widget.
-          mainAxisAlignment: MainAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: <Widget>[
             const Text(
               'You have pushed the button this many times:',
@@ -89,14 +96,29 @@ class _MyHomePageState extends State<MyHomePage> {
               '$_counter',
               style: Theme.of(context).textTheme.headlineMedium,
             ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: [
+                FloatingActionButton(
+                  onPressed: _decrementCounter,
+                  tooltip: "Decrement",
+                  child: const Icon(Icons.remove),
+                  backgroundColor: Colors.red,
+                  ),
+                FloatingActionButton(
+                  onPressed: _incrementCounter,
+                  tooltip: "Increment",
+                  child: const Icon(Icons.add),
+                  backgroundColor: Colors.green,
+                  ),
+              ],
+            ),
           ],
         ),
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
+
+      // This trailing comma makes auto-formatting nicer for build methods
+      // This trailing comma makes auto-formatting nicer for build methods.
     );
   }
 }

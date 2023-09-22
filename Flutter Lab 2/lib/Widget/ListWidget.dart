@@ -15,9 +15,9 @@ class ListWidget extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(),
       body: Padding(
-        padding: EdgeInsetsGeometry.infinity,
+        padding: EdgeInsets.all(8),
         child: ListView.builder(
-          itemCount: 2,
+          itemCount: _data.length,
           itemBuilder: (BuildContext context, int i) {
             var obj = _data[i];
             return _item(obj);

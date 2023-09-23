@@ -25,33 +25,37 @@ class NumrahKeypad extends StatelessWidget
         (
           children:
           [
-            SizedBox
+            Padding
             (
-              width: MediaQuery.sizeOf(context).width,
-              // height: MediaQuery.sizeOf(context).height / 8,
-              child: RichText
+              padding: const EdgeInsets.only(top: 20.0, bottom: 40),
+              child: SizedBox
               (
-                textAlign: TextAlign.center,
-                text: const TextSpan
+                width: MediaQuery.sizeOf(context).width,
+                // height: MediaQuery.sizeOf(context).height / 8,
+                child: RichText
                 (
-                  text: "\"Num-rah\"",
-                  style: TextStyle
+                  textAlign: TextAlign.center,
+                  text: const TextSpan
                   (
-                    fontSize: 40,
-                    color: greenButtonColor,
-                  ),
-                  children:
-                  [
-                    TextSpan
+                    text: "\"Num-rah\"",
+                    style: TextStyle
                     (
-                      text: "\n— a numeric keypad for Namrah baji",
-                      style: TextStyle
-                      (
-                        fontSize: 20,
-                        color: greenButtonColorOnHover,
-                      ),
+                      fontSize: 40,
+                      color: greenButtonColor,
                     ),
-                  ],
+                    children:
+                    [
+                      TextSpan
+                      (
+                        text: "\n— a numeric keypad for Namrah baji",
+                        style: TextStyle
+                        (
+                          fontSize: 20,
+                          color: greenButtonColorOnHover,
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
               ),
             ),
@@ -101,17 +105,66 @@ Widget _keypadThreeRowButtons(int n1, int n2, int n3)
               textAlign: TextAlign.center,
               text: TextSpan
               (
-                text: n3.toString(),
+                text: n1.toString(),
                 style: const TextStyle
                 (
                   fontSize: 50,
-                  color: blackTextColor,
+                  color: greenButtonColorOnHover,
                 ),
               ),
             ),
           ),
         ), 
-        
+        SizedBox
+        (
+          width: 100,
+          height: 100,
+          child: FloatingActionButton
+          (
+            onPressed: () {},
+            elevation: 8,
+            hoverColor: greenButtonColorOnHover,
+            backgroundColor: greenButtonColor,
+            child: RichText
+            (
+              textAlign: TextAlign.center,
+              text: TextSpan
+              (
+                text: n2.toString(),
+                style: const TextStyle
+                (
+                  fontSize: 50,
+                  color: greenButtonColorOnHover,
+                ),
+              ),
+            ),
+          ),
+        ),
+        SizedBox
+        (
+          width: 100,
+          height: 100,
+          child: FloatingActionButton
+          (
+            onPressed: () {},
+            elevation: 8,
+            hoverColor: greenButtonColorOnHover,
+            backgroundColor: greenButtonColor,
+            child: RichText
+            (
+              textAlign: TextAlign.center,
+              text: TextSpan
+              (
+                text: n3.toString(),
+                style: const TextStyle
+                (
+                  fontSize: 50,
+                  color: greenButtonColorOnHover,
+                ),
+              ),
+            ),
+          ),
+        ),  
       ],
     ),
   );

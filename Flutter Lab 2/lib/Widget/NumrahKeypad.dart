@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 const greenButtonColor = Color.fromARGB(255, 22, 219, 108);
 const greenButtonColorOnHover = Color.fromARGB(255, 14, 91, 47);
+const blackTextColor = Color.fromARGB(255, 62, 58, 58);
 
 class NumrahKeypad extends StatelessWidget
 {
@@ -38,7 +39,6 @@ class NumrahKeypad extends StatelessWidget
                   (
                     fontSize: 40,
                     color: greenButtonColor,
-                    backgroundColor: Color.fromARGB(255, 59, 161, 54),
                   ),
                   children:
                   [
@@ -48,6 +48,7 @@ class NumrahKeypad extends StatelessWidget
                       style: TextStyle
                       (
                         fontSize: 20,
+                        color: greenButtonColorOnHover,
                       ),
                     ),
                   ],
@@ -95,35 +96,22 @@ Widget _keypadThreeRowButtons(int n1, int n2, int n3)
             elevation: 8,
             hoverColor: greenButtonColorOnHover,
             backgroundColor: greenButtonColor,
-            child: Text(n1.toString()),
-          ),
-        ),
-        SizedBox
-        (
-          width: 100,
-          height: 100,
-          child: FloatingActionButton
-          (
-            onPressed: () {},
-            elevation: 8,
-            hoverColor: greenButtonColorOnHover,
-            backgroundColor: greenButtonColor,
-            child: Text(n2.toString()),
-          ),
-        ),
-        SizedBox
-        (
-          width: 100,
-          height: 100,
-          child: FloatingActionButton
-          (
-            onPressed: () {},
-            elevation: 8,
-            hoverColor: greenButtonColorOnHover,
-            backgroundColor: greenButtonColor,
-            child: Text(n3.toString()),
+            child: RichText
+            (
+              textAlign: TextAlign.center,
+              text: TextSpan
+              (
+                text: n3.toString(),
+                style: const TextStyle
+                (
+                  fontSize: 50,
+                  color: blackTextColor,
+                ),
+              ),
+            ),
           ),
         ), 
+        
       ],
     ),
   );

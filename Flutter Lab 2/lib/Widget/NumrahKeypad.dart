@@ -17,17 +17,32 @@ class NumrahKeypad extends StatelessWidget
       body: Padding
       (
         padding: const EdgeInsets.all(2.0),
-        child: ListView.builder
+        child: Column
         (
-          itemCount: 3,
-          itemBuilder: (BuildContext context, int i)
-          {
-            return _keypadThreeRowButtons((2*i + (i + 1)), (2*i + (i + 2)), (2*i + (i + 3)));
-            // 1 2 3 i = 0
-            // 4 5 6 i = 1
-            // 7 8 9 i = 2
-          },
-        ),
+          children:
+          [
+            SizedBox
+            (
+              child: FilledButton.tonalIcon
+              (
+                onPressed: () {},
+                icon: const Icon(Icons.calculate_rounded),
+                label: const Text("Numrah  — a numeric keypad for Namrah baji"),
+              ),
+            ),
+            ListView.builder
+            (
+              itemCount: 3,
+              itemBuilder: (BuildContext context, int i)
+              {
+                return _keypadThreeRowButtons((2*i + (i + 1)), (2*i + (i + 2)), (2*i + (i + 3)));
+                // 1 2 3 i = 0
+                // 4 5 6 i = 1
+                // 7 8 9 i = 2
+              },
+            ),
+          ]
+        )
       ),
     );
   }

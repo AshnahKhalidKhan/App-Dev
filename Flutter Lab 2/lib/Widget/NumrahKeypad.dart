@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 
+const greenButtonColor = Color.fromARGB(255, 22, 219, 108);
+const greenButtonColorOnHover = Color.fromARGB(255, 14, 91, 47);
+
 class NumrahKeypad extends StatelessWidget
 {
   const NumrahKeypad({super.key});
@@ -16,20 +19,21 @@ class NumrahKeypad extends StatelessWidget
       ),
       body: Padding
       (
-        padding: const EdgeInsets.all(2.0),
+        padding: const EdgeInsets.all(8.0),
         child: Column
         (
           children:
           [
-            SizedBox
-            (
-              child: FilledButton.tonalIcon
-              (
-                onPressed: () {},
-                icon: const Icon(Icons.calculate_rounded),
-                label: const Text("Numrah  — a numeric keypad for Namrah baji"),
-              ),
-            ),
+            // SizedBox
+            // (
+            //   width: MediaQuery.sizeOf(context).width / 2.5,
+            //   child: FilledButton.tonalIcon
+            //   (
+            //     onPressed: () {},
+            //     icon: const Icon(Icons.calculate_rounded),
+            //     label: const Text("Numrah  — a numeric keypad for Namrah baji"),
+            //   ),
+            // ),
             ListView.builder
             (
               itemCount: 3,
@@ -52,7 +56,7 @@ Widget _keypadThreeRowButtons(int n1, int n2, int n3)
 {
   return Padding
   (
-    padding:EdgeInsets.all(20.0),
+    padding: const EdgeInsets.all(8.0),
     child: Row
     (
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -65,10 +69,10 @@ Widget _keypadThreeRowButtons(int n1, int n2, int n3)
           child: FloatingActionButton
           (
             onPressed: () {},
+            elevation: 8,
+            hoverColor: greenButtonColorOnHover,
+            backgroundColor: greenButtonColor,
             child: Text(n1.toString()),
-            elevation: 8,
-            hoverColor: Color.fromARGB(255, 14, 91, 47),
-            backgroundColor: Color.fromARGB(255, 22, 219, 108),
           ),
         ),
         SizedBox
@@ -78,10 +82,10 @@ Widget _keypadThreeRowButtons(int n1, int n2, int n3)
           child: FloatingActionButton
           (
             onPressed: () {},
+            elevation: 8,
+            hoverColor: greenButtonColorOnHover,
+            backgroundColor: greenButtonColor,
             child: Text(n2.toString()),
-            elevation: 8,
-            hoverColor: Color.fromARGB(255, 14, 91, 47),
-            backgroundColor: Color.fromARGB(255, 22, 219, 108),
           ),
         ),
         SizedBox
@@ -91,10 +95,10 @@ Widget _keypadThreeRowButtons(int n1, int n2, int n3)
           child: FloatingActionButton
           (
             onPressed: () {},
-            child: Text(n3.toString()),
             elevation: 8,
-            hoverColor: Color.fromARGB(255, 14, 91, 47),
-            backgroundColor: Color.fromARGB(255, 22, 219, 108),
+            hoverColor: greenButtonColorOnHover,
+            backgroundColor: greenButtonColor,
+            child: Text(n3.toString()),
           ),
         ), 
       ],

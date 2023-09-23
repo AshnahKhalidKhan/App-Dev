@@ -19,19 +19,22 @@ class NumrahKeypad extends StatelessWidget
       ),
       body: Padding
       (
-        padding: const EdgeInsets.all(8.0),
+        padding: const EdgeInsets.all(10.0),
         child: Column
         (
           children:
           [
             SizedBox
             (
-              width: MediaQuery.sizeOf(context).width / 2.5,
-              child: FilledButton.tonalIcon
+              width: MediaQuery.sizeOf(context).width / 1.5,
+              // height: MediaQuery.sizeOf(context).height / 8,
+              child: RichText
               (
-                onPressed: () {},
-                icon: const Icon(Icons.calculate_rounded),
-                label: const Text("Numrah  — a numeric keypad for Namrah baji"),
+                text: TextSpan
+                (
+                  text: "Numrah\n— a numeric keypad for Namrah baji",
+                  style: DefaultTextStyle.of(context).style,
+                ),
               ),
             ),
             Expanded

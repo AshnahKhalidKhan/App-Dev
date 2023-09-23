@@ -4,7 +4,7 @@ class TypeButtons extends StatelessWidget {
   final String text;
   final Function onPressed;
 
-  TypeButtons({required this.text, required this.onPressed});
+  const TypeButtons({super.key, required this.text, required this.onPressed});
 
   @override
   Widget build(BuildContext context) {

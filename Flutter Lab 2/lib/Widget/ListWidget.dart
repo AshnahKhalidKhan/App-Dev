@@ -15,7 +15,7 @@ class ListWidget extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(),
       body: Padding(
-        padding: EdgeInsets.all(8),
+        padding: const EdgeInsets.all(8),
         child: ListView.builder(
           itemCount: _data.length,
           itemBuilder: (BuildContext context, int i) {
@@ -48,10 +48,10 @@ class ListWidget extends StatelessWidget {
 Widget _item(TileDataModel obj) {
   return Card(
     child: ListTile(
-      leading: Icon(Icons.person),
+      leading: const Icon(Icons.person),
       title: Text(obj.title),
       subtitle: Text(obj.subTitle),
-      trailing: Wrap(
+      trailing: const Wrap(
         children: <Widget>[
           Icon(Icons.notification_add),
           Icon(Icons.notification_add),

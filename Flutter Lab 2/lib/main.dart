@@ -21,8 +21,8 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
       ),
       // home: const MyHomePage(title: "I'm making my first app, bro!"), //Heading displayed on screen
-      // home: const NewWidgetName(),
-      home: const ListWidget(),
+      home: const NewWidgetName(),
+      // home: const ListWidget(),
     );
   }
 }
@@ -101,14 +101,14 @@ class _MyHomePageState extends State<MyHomePage> {
                 FloatingActionButton(
                   onPressed: _decrementCounter,
                   tooltip: "Decrement",
-                  child: const Icon(Icons.remove),
                   backgroundColor: Colors.yellow,
+                  child: const Icon(Icons.remove),
                   ),
                 FloatingActionButton(
                   onPressed: _incrementCounter,
                   tooltip: "Increment",
-                  child: const Icon(Icons.add),
                   backgroundColor: Colors.green,
+                  child: const Icon(Icons.add),
                   ),
                 TypeButtons(text: "Button Ka Text Hai", onPressed: _incrementCounter)
               ],

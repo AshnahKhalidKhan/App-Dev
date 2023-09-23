@@ -1,4 +1,3 @@
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 
 class NewWidgetName extends StatelessWidget {
@@ -11,7 +10,7 @@ class NewWidgetName extends StatelessWidget {
       appBar: AppBar(),
       body: Padding
       (
-        padding: EdgeInsets.all(8.0),
+        padding: const EdgeInsets.all(8.0),
         child: Column(
           children:
           [
@@ -57,7 +56,7 @@ class NewWidgetName extends StatelessWidget {
                   child: FilledButton.icon
                   (
                     onPressed: () {},
-                    icon: const Icon(Icons.add),
+                    icon: const Icon(Icons.message_rounded),
                     label: const Text("Filled Button Icon"),
                   ),
                 ),

@@ -39,21 +39,45 @@ Widget _keypadThreeRowButtons(int n1, int n2, int n3)
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children:
       [
-        FloatingActionButton
+        SizedBox
         (
-          onPressed: () {},
-          child: Text(n1.toString()),
+          width: 100,
+          height: 100,
+          child: FloatingActionButton
+          (
+            onPressed: () {},
+            child: Text(n1.toString()),
+            elevation: 8,
+            hoverColor: Color.fromARGB(255, 14, 91, 47),
+            backgroundColor: Color.fromARGB(255, 22, 219, 108),
+          ),
         ),
-        FloatingActionButton
+        SizedBox
         (
-          onPressed: () {},
-          child: Text(n2.toString()),
+          width: 100,
+          height: 100,
+          child: FloatingActionButton
+          (
+            onPressed: () {},
+            child: Text(n2.toString()),
+            elevation: 8,
+            hoverColor: Color.fromARGB(255, 14, 91, 47),
+            backgroundColor: Color.fromARGB(255, 22, 219, 108),
+          ),
         ),
-        FloatingActionButton
+        SizedBox
         (
-          onPressed: () {},
-          child: Text(n3.toString()),
-        ),
+          width: 100,
+          height: 100,
+          child: FloatingActionButton
+          (
+            onPressed: () {},
+            child: Text(n3.toString()),
+            elevation: 8,
+            hoverColor: Color.fromARGB(255, 14, 91, 47),
+            backgroundColor: Color.fromARGB(255, 22, 219, 108),
+          ),
+        ), 
       ],
     ),
   );

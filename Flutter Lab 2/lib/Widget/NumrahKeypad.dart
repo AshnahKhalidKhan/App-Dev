@@ -9,7 +9,11 @@ class NumrahKeypad extends StatelessWidget
   {
     return Scaffold
     (
-      appBar: AppBar(),
+      appBar: AppBar
+      (
+        backgroundColor: Color.fromARGB(255, 22, 219, 108),
+        title: const Text("NUM-RAH"),
+      ),
       body: Padding
       (
         padding: const EdgeInsets.all(2.0),

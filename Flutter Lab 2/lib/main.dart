@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/Widget/NumrahKeypad.dart';
 import 'package:flutter_application_1/Widget/buttons.dart';
 import 'package:flutter_application_1/Widget/newComponent.dart';
 
@@ -20,7 +21,8 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
       ),
       // home: const MyHomePage(title: "I'm making my first app, bro!"), //Heading displayed on screen
-      home: const NewWidgetName(),
+      // home: const NewWidgetName(),
+      home: const NumrahKeypad(),
       // home: const ListWidget(),
     );
   }

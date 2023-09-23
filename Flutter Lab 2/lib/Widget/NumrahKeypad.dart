@@ -26,14 +26,31 @@ class NumrahKeypad extends StatelessWidget
           [
             SizedBox
             (
-              width: MediaQuery.sizeOf(context).width / 1.5,
+              width: MediaQuery.sizeOf(context).width,
               // height: MediaQuery.sizeOf(context).height / 8,
               child: RichText
               (
-                text: TextSpan
+                textAlign: TextAlign.center,
+                text: const TextSpan
                 (
-                  text: "Numrah\n— a numeric keypad for Namrah baji",
-                  style: DefaultTextStyle.of(context).style,
+                  text: "\"Num-rah\"",
+                  style: TextStyle
+                  (
+                    fontSize: 40,
+                    color: greenButtonColor,
+                    backgroundColor: Color.fromARGB(255, 59, 161, 54),
+                  ),
+                  children:
+                  [
+                    TextSpan
+                    (
+                      text: "\n— a numeric keypad for Namrah baji",
+                      style: TextStyle
+                      (
+                        fontSize: 20,
+                      ),
+                    ),
+                  ],
                 ),
               ),
             ),

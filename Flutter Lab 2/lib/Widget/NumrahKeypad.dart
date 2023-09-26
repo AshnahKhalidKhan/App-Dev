@@ -148,7 +148,7 @@ Widget _keypadThreeRowButtons(int n1, int n2, int n3)
           (
             onPressed: () {},
             elevation: 8,
-            hoverColor: greenButtonColorOnHover,
+            hoverColor: Colors.black,
             backgroundColor: greenButtonColor,
             child: RichText
             (

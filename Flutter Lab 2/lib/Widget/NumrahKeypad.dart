@@ -73,6 +73,34 @@ class NumrahKeypad extends StatelessWidget
                 },
               ),
             ),
+            SizedBox
+            (
+              width: 100,
+              height: 100,
+              child: FloatingActionButton
+              (
+                onPressed: ()
+                {
+                  print("0\n");
+                },
+                elevation: 8,
+                hoverColor: greenButtonColorOnHover,
+                backgroundColor: greenButtonColor,
+                child: RichText
+                (
+                  textAlign: TextAlign.center,
+                  text: const TextSpan
+                  (
+                    text: "0",
+                    style: TextStyle
+                    (
+                      fontSize: 50,
+                      color: greenButtonColorOnHover,
+                    ),
+                  ),
+                ),
+              ),
+            ), 
           ]
         )
       ),

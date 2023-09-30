@@ -18,7 +18,7 @@ class LoginScreen extends StatelessWidget
       (
         leading: const Icon(Icons.add),
         title: const Text("GDSC Pocket App"),
-        backgroundColor: Color.fromARGB(255, 66, 133, 244),
+        backgroundColor: GoogleBlue,
         titleTextStyle: const TextStyle
         (
           color: Colors.white,
@@ -32,15 +32,12 @@ class LoginScreen extends StatelessWidget
         (
           children:
           [
-            TextField
-            (
-              textAlign: TextAlign.center,
-            ),
             ElevatedButton
             (
-              style: ButtonStyle
+              style: ElevatedButton.styleFrom
               (
-                backgroundColor: const Color.fromARGB(255, 52, 168, 83),
+                backgroundColor: GoogleYellow,
+                foregroundColor: GoogleRed,
               ),
               onPressed: () {},
               child: TextField

@@ -92,7 +92,23 @@ class _statefulWidgetKiState extends State<KoiBhiStatefulWidget>
                 itemBuilder: (context, i)
                 {
                   var item = snapshot.data![i];
-                  return Text(item.title);
+                  // return Text(item.title);
+                  return Card
+                  (
+                    color: Colors.blue,
+                    child: Text
+                    (
+                      item.title,
+                      overflow: TextOverflow.visible,
+                      textAlign: TextAlign.center,
+                      style: const TextStyle
+                      (
+                        color: Colors.white,
+                        fontSize: 20,
+                        overflow: TextOverflow.visible,
+                      ),
+                    ),
+                  );
                 },
               );
             }

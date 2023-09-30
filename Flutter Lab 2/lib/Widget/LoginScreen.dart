@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
-const GoogleBlue = Color.fromARGB(255, 52, 168, 83);
-const GoogleRed = Color.fromARGB(255, 52, 168, 83);
-const GoogleYellow = Color.fromARGB(255, 52, 168, 83);
+const GoogleBlue = Color.fromARGB(255, 66, 133, 244);
+const GoogleRed = Color.fromARGB(255, 234, 67, 53);
+const GoogleYellow = Color.fromARGB(255, 251, 188, 5);
 const GoogleGreen = Color.fromARGB(255, 52, 168, 83);
 
 class LoginScreen extends StatelessWidget

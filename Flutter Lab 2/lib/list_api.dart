@@ -81,16 +81,28 @@ class _statefulWidgetKiState extends State<KoiBhiStatefulWidget>
       (
         child: FutureBuilder<List<Users>>
         (
-          future: futureUsers,
+          future: fetchUsers(),
           builder: (context, snapshot)
           {
             if (snapshot.hasData)
             {
-              return ListView.builder(itemBuilder: itemBuilder);
+              return ListView.builder
+              (
+                itemCount: snapshot.data?.length,
+                itemBuilder: (context, i)
+                {
+                  var item = snapshot.data![i];
+                  return Text(item.title);
+                },
+              );
             }
             else if (snapshot.hasError)
             {
-
+              return Text('${snapshot.error}');
+            }
+            else
+            {
+              return const CircularProgressIndicator();
             }
           }
         )

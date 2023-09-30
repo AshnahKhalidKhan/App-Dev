@@ -1,5 +1,10 @@
 import 'package:flutter/material.dart';
 
+const GoogleBlue = Color.fromARGB(255, 52, 168, 83);
+const GoogleRed = Color.fromARGB(255, 52, 168, 83);
+const GoogleYellow = Color.fromARGB(255, 52, 168, 83);
+const GoogleGreen = Color.fromARGB(255, 52, 168, 83);
+
 class LoginScreen extends StatelessWidget
 {
   const LoginScreen({super.key});
@@ -20,7 +25,7 @@ class LoginScreen extends StatelessWidget
           fontSize: 20,
         ),
       ),
-      body: const Padding
+      body: Padding
       (
         padding: EdgeInsets.all(10.0),
         child: Column
@@ -30,6 +35,18 @@ class LoginScreen extends StatelessWidget
             TextField
             (
               textAlign: TextAlign.center,
+            ),
+            ElevatedButton
+            (
+              style: ButtonStyle
+              (
+                backgroundColor: const Color.fromARGB(255, 52, 168, 83),
+              ),
+              onPressed: () {},
+              child: TextField
+              (
+                textAlign: TextAlign.center,
+              ),
             ),
           ],
         ),

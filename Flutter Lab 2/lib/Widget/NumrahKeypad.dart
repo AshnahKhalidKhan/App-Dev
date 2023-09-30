@@ -96,7 +96,10 @@ Widget _keypadThreeRowButtons(int n1, int n2, int n3)
           height: 100,
           child: FloatingActionButton
           (
-            onPressed: () {},
+            onPressed: ()
+            {
+              print(n1.toString() + "\n");
+            },
             elevation: 8,
             hoverColor: greenButtonColorOnHover,
             backgroundColor: greenButtonColor,
@@ -121,7 +124,10 @@ Widget _keypadThreeRowButtons(int n1, int n2, int n3)
           height: 100,
           child: FloatingActionButton
           (
-            onPressed: () {},
+            onPressed: ()
+            {
+              print(n2.toString() + "\n");
+            },
             elevation: 8,
             hoverColor: greenButtonColorOnHover,
             backgroundColor: greenButtonColor,
@@ -146,7 +152,10 @@ Widget _keypadThreeRowButtons(int n1, int n2, int n3)
           height: 100,
           child: FloatingActionButton
           (
-            onPressed: () {},
+            onPressed: ()
+            {
+              print(n3.toString() + "\n");
+            },
             elevation: 8,
             hoverColor: Colors.black,
             backgroundColor: greenButtonColor,

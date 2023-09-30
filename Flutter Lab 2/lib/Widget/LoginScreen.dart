@@ -4,6 +4,7 @@ const GoogleBlue = Color.fromARGB(255, 66, 133, 244);
 const GoogleRed = Color.fromARGB(255, 234, 67, 53);
 const GoogleYellow = Color.fromARGB(255, 251, 188, 5);
 const GoogleGreen = Color.fromARGB(255, 52, 168, 83);
+const White = Colors.white;
 
 class LoginScreen extends StatelessWidget
 {
@@ -32,17 +33,39 @@ class LoginScreen extends StatelessWidget
         (
           children:
           [
-            ElevatedButton
+            ElevatedButton.icon
             (
+              icon: Icon
+              (
+                Icons.email_rounded,
+                size: 40,
+                color: GoogleBlue,
+              ),
               style: ElevatedButton.styleFrom
               (
-                backgroundColor: GoogleYellow,
-                foregroundColor: GoogleRed,
+                backgroundColor: White,
+                foregroundColor: GoogleGreen,
+                side: BorderSide
+                (
+                  color: GoogleBlue,
+                  width: 5,
+                )
               ),
               onPressed: () {},
-              child: TextField
+              label: TextField
               (
+                decoration: InputDecoration
+                (
+                  hintText: "Enter Email",
+                  fillColor: GoogleRed,
+                ),
                 textAlign: TextAlign.center,
+                textAlignVertical: TextAlignVertical.center,
+                style: TextStyle
+                (
+                  color: White,
+                  fontSize: 20,
+                ),
               ),
             ),
           ],

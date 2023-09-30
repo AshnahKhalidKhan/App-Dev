@@ -5,9 +5,9 @@ import 'package:flutter_application_1/Widget/buttons.dart';
 import 'package:flutter_application_1/Widget/newComponent.dart';
 import 'package:flutter_application_1/list_api.dart';
 
-// void main() {
-//   runApp(const MyApp());
-// }
+void main() {
+  runApp(const MyApp());
+}
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -24,10 +24,10 @@ class MyApp extends StatelessWidget {
       ),
       // home: const MyHomePage(title: "I'm making my first app, bro!"), //Heading displayed on screen
       // home: const NewWidgetName(),
-      // home: const NumrahKeypad(),
+      home: const NumrahKeypad(),
       // home: const ListWidget(),
       // home: const LoginScreen(),
-      home: KoiBhiStatefulWidget(),
+      // home: KoiBhiStatefulWidget(),
     );
   }
 }
@@ -108,14 +108,15 @@ class _MyHomePageState extends State<MyHomePage> {
                   tooltip: "Decrement",
                   backgroundColor: Colors.yellow,
                   child: const Icon(Icons.remove),
-                  ),
+                ),
                 FloatingActionButton(
                   onPressed: _incrementCounter,
                   tooltip: "Increment",
                   backgroundColor: Colors.green,
                   child: const Icon(Icons.add),
-                  ),
-                TypeButtons(text: "Button Ka Text Hai", onPressed: _incrementCounter)
+                ),
+                TypeButtons(
+                    text: "Button Ka Text Hai", onPressed: _incrementCounter)
               ],
             ),
           ],

@@ -95,18 +95,36 @@ class _statefulWidgetKiState extends State<KoiBhiStatefulWidget>
                   // return Text(item.title);
                   return Card
                   (
-                    color: Colors.blue,
-                    child: Text
+                    shape: RoundedRectangleBorder
                     (
-                      item.title,
-                      overflow: TextOverflow.visible,
-                      textAlign: TextAlign.center,
-                      style: const TextStyle
-                      (
-                        color: Colors.white,
-                        fontSize: 20,
-                        overflow: TextOverflow.visible,
-                      ),
+                      borderRadius: BorderRadius.circular(8.0),
+                    ),
+                    color: Colors.blue,
+                    child: Column
+                    (
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children:
+                      [
+                        Icon
+                        (
+                          Icons.add,
+                          size: 40,
+                          color: Colors.white,
+                        ),
+                        Text
+                        (
+                          item.title,
+                          overflow: TextOverflow.visible,
+                          textAlign: TextAlign.center,
+                          style: const TextStyle
+                          (
+                            color: Colors.white,
+                            fontSize: 20,
+                            overflow: TextOverflow.visible,
+                          ),
+                        ),
+                      ]
                     ),
                   );
                 },

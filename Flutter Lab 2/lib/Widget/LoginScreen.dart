@@ -13,7 +13,10 @@ class LoginScreen extends StatelessWidget
       (
         title: const Text("GDSC Pocket App"),
         backgroundColor: Color.fromARGB(255, 66, 133, 244),
-        titleTextStyle: TextStyle(color: Colors.white),
+        titleTextStyle: TextStyle
+        (
+          color: Colors.white
+        ),
       ),
     );
   }

@@ -100,31 +100,26 @@ class _statefulWidgetKiState extends State<KoiBhiStatefulWidget>
                       borderRadius: BorderRadius.circular(8.0),
                     ),
                     color: Colors.blue,
-                    child: Column
+                    child: ListTile
                     (
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children:
-                      [
-                        Icon
+                      leading: const Icon
+                      (
+                        Icons.add_circle_outline_rounded,
+                        size: 50,
+                        color: Colors.white,
+                      ),
+                      title: Text
+                      (
+                        item.title,
+                        overflow: TextOverflow.visible,
+                        textAlign: TextAlign.center,
+                        style: const TextStyle
                         (
-                          Icons.add,
-                          size: 40,
                           color: Colors.white,
-                        ),
-                        Text
-                        (
-                          item.title,
+                          fontSize: 20,
                           overflow: TextOverflow.visible,
-                          textAlign: TextAlign.center,
-                          style: const TextStyle
-                          (
-                            color: Colors.white,
-                            fontSize: 20,
-                            overflow: TextOverflow.visible,
-                          ),
                         ),
-                      ]
+                      ),
                     ),
                   );
                 },

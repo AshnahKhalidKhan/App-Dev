@@ -24,10 +24,10 @@ class MyApp extends StatelessWidget {
       ),
       // home: const MyHomePage(title: "I'm making my first app, bro!"), //Heading displayed on screen
       // home: const NewWidgetName(),
-      home: const NumrahKeypad(),
+      // home: const NumrahKeypad(),
       // home: const ListWidget(),
       // home: const LoginScreen(),
-      // home: KoiBhiStatefulWidget(),
+      home: KoiBhiStatefulWidget(),
     );
   }
 }

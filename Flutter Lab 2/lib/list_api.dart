@@ -109,4 +109,11 @@ class _statefulWidgetKiState extends State<KoiBhiStatefulWidget>
       ),
     );
   }
+
+  @override
+  void initState()
+  {
+    super.initState();
+    fetchUsers();
+  }
 }

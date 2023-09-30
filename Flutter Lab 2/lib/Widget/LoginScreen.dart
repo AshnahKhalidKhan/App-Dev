@@ -44,7 +44,7 @@ class LoginScreen extends StatelessWidget
               style: ElevatedButton.styleFrom
               (
                 backgroundColor: White,
-                foregroundColor: GoogleGreen,
+                // foregroundColor: GoogleGreen, // Jub likhein to ye color ho jayay box ka
                 side: BorderSide
                 (
                   color: GoogleBlue,
@@ -57,7 +57,77 @@ class LoginScreen extends StatelessWidget
                 decoration: InputDecoration
                 (
                   hintText: "Enter Email",
-                  fillColor: GoogleRed,
+                  // focusColor: GoogleRed,
+                ),
+                textAlign: TextAlign.center,
+                textAlignVertical: TextAlignVertical.center,
+                style: TextStyle
+                (
+                  color: GoogleBlue,
+                  fontSize: 20,
+                ),
+              ),
+            ),
+            ElevatedButton.icon
+            (
+              icon: Icon
+              (
+                Icons.remove_red_eye_rounded,
+                size: 40,
+                color: GoogleBlue,
+              ),
+              style: ElevatedButton.styleFrom
+              (
+                backgroundColor: White,
+                // foregroundColor: GoogleGreen, // Jub likhein to ye color ho jayay box ka
+                side: BorderSide
+                (
+                  color: GoogleBlue,
+                  width: 5,
+                )
+              ),
+              onPressed: () {},
+              label: TextField
+              (
+                decoration: InputDecoration
+                (
+                  hintText: "Enter Password",
+                  // focusColor: GoogleRed,
+                ),
+                textAlign: TextAlign.center,
+                textAlignVertical: TextAlignVertical.center,
+                style: TextStyle
+                (
+                  color: GoogleBlue,
+                  fontSize: 20,
+                ),
+              ),
+            ),
+            FilledButton.icon
+            (
+              icon: Icon
+              (
+                Icons.login_rounded,
+                size: 40,
+                color: White,
+              ),
+              style: FilledButton.styleFrom
+              (
+                backgroundColor: GoogleBlue,
+                // foregroundColor: GoogleGreen, // Jub likhein to ye color ho jayay box ka
+                side: BorderSide
+                (
+                  color: GoogleBlue,
+                  width: 5,
+                )
+              ),
+              onPressed: () {},
+              label: TextField
+              (
+                decoration: InputDecoration
+                (
+                  hintText: "Sign In",
+                  // focusColor: GoogleRed,
                 ),
                 textAlign: TextAlign.center,
                 textAlignVertical: TextAlignVertical.center,
@@ -67,6 +137,7 @@ class LoginScreen extends StatelessWidget
                   fontSize: 20,
                 ),
               ),
+
             ),
           ],
         ),

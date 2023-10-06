@@ -52,132 +52,112 @@ class HomePage extends StatelessWidget
   //   return cards;
   // } 
   
-  // List<Card> _buildGridCards(BuildContext context)
-  // {
-  //   List<Product> products = ProductsRepository.loadProducts(Category.all);
-  //   if (products.isEmpty)
-  //   {
-  //     return const <Card>[];
-  //   }
-  //   final ThemeData theme = Theme.of(context);
-  //   final NumberFormat formatter = NumberFormat.simpleCurrency
-  //   (
-  //     locale: Localizations.localeOf(context).toString());
-  //     return products.map((product)
-  //     {
-  //       return Card
-  //       (
-  //         clipBehavior: Clip.antiAlias,
-  //         child: Column
-  //         (
-  //           crossAxisAlignment: CrossAxisAlignment.start,
-  //           children: <Widget>
-  //           [
-  //             AspectRatio
-  //             (
-  //               aspectRatio: 18 / 11,
-  //               child: Image.asset
-  //               (
-  //                 product.assetName,
-  //                 package: product.assetPackage,
-  //               ),
-  //             ),
-  //             Expanded
-  //             (
-  //               child: Padding
-  //               (
-  //                 padding: const EdgeInsets.fromLTRB(16.0, 12.0, 16.0, 8.0),
-  //                 child: Column
-  //                 (
-  //                   crossAxisAlignment: CrossAxisAlignment.start,
-  //                   children: <Widget>
-  //                   [
-  //                     Text
-  //                     (
-  //                       product.name,
-  //                       style: theme.textTheme.titleLarge,
-  //                       maxLines: 1,
-  //                     ),
-  //                     const SizedBox(height: 8.0),
-  //                     Text
-  //                     (
-  //                       formatter.format(product.price),
-  //                       style: theme.textTheme.titleSmall,
-  //                     ),
-  //                   ],
-  //                 ),
-  //               ),
-  //             ),
-  //           ],
-  //         ),
-  //       );
-  //     }
-  //   ).toList();
-  // }
-
   List<Card> _buildGridCards(BuildContext context)
   {
-    Future<List<Users>> products = fetchUsers();
-    // if (products.isEmpty)
-    // {
-    //   return const <Card>[];
-    // }
-    // final ThemeData theme = Theme.of(context);
-    // final NumberFormat formatter = NumberFormat.simpleCurrency
-    // (
-    //   locale: Localizations.localeOf(context).toString());
-    //   return products.map((product)
-    //   {
-    //     return Card
-    //     (
-    //       clipBehavior: Clip.antiAlias,
-    //       child: Column
-    //       (
-    //         crossAxisAlignment: CrossAxisAlignment.start,
-    //         children: <Widget>
-    //         [
-    //           AspectRatio
-    //           (
-    //             aspectRatio: 18 / 11,
-    //             child: Image.asset
-    //             (
-    //               product.assetName,
-    //               package: product.assetPackage,
-    //             ),
-    //           ),
-    //           Expanded
-    //           (
-    //             child: Padding
-    //             (
-    //               padding: const EdgeInsets.fromLTRB(16.0, 12.0, 16.0, 8.0),
-    //               child: Column
-    //               (
-    //                 crossAxisAlignment: CrossAxisAlignment.start,
-    //                 children: <Widget>
-    //                 [
-    //                   Text
-    //                   (
-    //                     product.name,
-    //                     style: theme.textTheme.titleLarge,
-    //                     maxLines: 1,
-    //                   ),
-    //                   const SizedBox(height: 8.0),
-    //                   Text
-    //                   (
-    //                     formatter.format(product.price),
-    //                     style: theme.textTheme.titleSmall,
-    //                   ),
-    //                 ],
-    //               ),
-    //             ),
-    //           ),
-    //         ],
-    //       ),
-    //     );
-    //   }
-    // ).toList();
-    return products.toList();
+    List<Product> products = ProductsRepository.loadProducts(Category.all);
+    if (products.isEmpty)
+    {
+      return const <Card>[];
+    }
+    final ThemeData theme = Theme.of(context);
+    final NumberFormat formatter = NumberFormat.simpleCurrency
+    (
+      locale: Localizations.localeOf(context).toString());
+      return products.map((product)
+      {
+        return Card
+        (
+          clipBehavior: Clip.antiAlias,
+          child: Column
+          (
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: <Widget>
+            [
+              AspectRatio
+              (
+                aspectRatio: 18 / 11,
+                child: Image.asset
+                (
+                  product.assetName,
+                  package: product.assetPackage,
+                ),
+              ),
+              Expanded
+              (
+                child: Padding
+                (
+                  padding: const EdgeInsets.fromLTRB(16.0, 12.0, 16.0, 8.0),
+                  child: Column
+                  (
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: <Widget>
+                    [
+                      Text
+                      (
+                        product.name,
+                        style: theme.textTheme.titleLarge,
+                        maxLines: 1,
+                      ),
+                      const SizedBox(height: 8.0),
+                      Text
+                      (
+                        formatter.format(product.price),
+                        style: theme.textTheme.titleSmall,
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+            ],
+          ),
+        );
+      }
+    ).toList();
   }
+
+  // List<Users>_buildGridCards(BuildContext context)
+  // {
+  //   Future<List<Users>> products = fetchUsers();
+  //   List<Users> a = FutureBuilder<List<Users>>
+  //       (
+  //         future: fetchUsers(),
+  //         builder: (context, snapshot)
+  //         {
+  //           if (snapshot.hasData)
+  //           {
+  //             return ListView.builder
+  //             (
+  //               itemCount: snapshot.data?.length,
+  //               itemBuilder: (context, i)
+  //               {
+  //                 var item = snapshot.data![i];
+  //                 // return Text(item.title);
+  //                 return Card
+  //                 (
+  //                   child: ListTile
+  //                   (
+  //                     title: Text
+  //                     (
+  //                       item.title,
+  //                     ),
+  //                   ),
+  //                 );
+  //               },
+  //             );
+  //           }
+  //           else if (snapshot.hasError)
+  //           {
+  //             return Text('${snapshot.error}');
+  //           }
+  //           else
+  //           {
+  //             return const CircularProgressIndicator();
+  //           }
+  //         }
+  //       ) as List<Users>;
+
+  //   return a;
+  // }
 
 
 

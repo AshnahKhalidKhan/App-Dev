@@ -117,7 +117,7 @@ class HomePage extends StatelessWidget
 
   List<Card> _buildGridCards(BuildContext context)
   {
-    List<Product> products = ProductsRepository.fetchUsers();
+    List<Users> products = ProductsRepository.fetchUsers();
     if (products.isEmpty)
     {
       return const <Card>[];

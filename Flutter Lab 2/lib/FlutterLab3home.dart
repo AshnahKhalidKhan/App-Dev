@@ -117,65 +117,66 @@ class HomePage extends StatelessWidget
 
   List<Card> _buildGridCards(BuildContext context)
   {
-    List<Users> products = ProductsRepository.fetchUsers();
-    if (products.isEmpty)
-    {
-      return const <Card>[];
-    }
-    final ThemeData theme = Theme.of(context);
-    final NumberFormat formatter = NumberFormat.simpleCurrency
-    (
-      locale: Localizations.localeOf(context).toString());
-      return products.map((product)
-      {
-        return Card
-        (
-          clipBehavior: Clip.antiAlias,
-          child: Column
-          (
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: <Widget>
-            [
-              AspectRatio
-              (
-                aspectRatio: 18 / 11,
-                child: Image.asset
-                (
-                  product.assetName,
-                  package: product.assetPackage,
-                ),
-              ),
-              Expanded
-              (
-                child: Padding
-                (
-                  padding: const EdgeInsets.fromLTRB(16.0, 12.0, 16.0, 8.0),
-                  child: Column
-                  (
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: <Widget>
-                    [
-                      Text
-                      (
-                        product.name,
-                        style: theme.textTheme.titleLarge,
-                        maxLines: 1,
-                      ),
-                      const SizedBox(height: 8.0),
-                      Text
-                      (
-                        formatter.format(product.price),
-                        style: theme.textTheme.titleSmall,
-                      ),
-                    ],
-                  ),
-                ),
-              ),
-            ],
-          ),
-        );
-      }
-    ).toList();
+    Future<List<Users>> products = fetchUsers();
+    // if (products.isEmpty)
+    // {
+    //   return const <Card>[];
+    // }
+    // final ThemeData theme = Theme.of(context);
+    // final NumberFormat formatter = NumberFormat.simpleCurrency
+    // (
+    //   locale: Localizations.localeOf(context).toString());
+    //   return products.map((product)
+    //   {
+    //     return Card
+    //     (
+    //       clipBehavior: Clip.antiAlias,
+    //       child: Column
+    //       (
+    //         crossAxisAlignment: CrossAxisAlignment.start,
+    //         children: <Widget>
+    //         [
+    //           AspectRatio
+    //           (
+    //             aspectRatio: 18 / 11,
+    //             child: Image.asset
+    //             (
+    //               product.assetName,
+    //               package: product.assetPackage,
+    //             ),
+    //           ),
+    //           Expanded
+    //           (
+    //             child: Padding
+    //             (
+    //               padding: const EdgeInsets.fromLTRB(16.0, 12.0, 16.0, 8.0),
+    //               child: Column
+    //               (
+    //                 crossAxisAlignment: CrossAxisAlignment.start,
+    //                 children: <Widget>
+    //                 [
+    //                   Text
+    //                   (
+    //                     product.name,
+    //                     style: theme.textTheme.titleLarge,
+    //                     maxLines: 1,
+    //                   ),
+    //                   const SizedBox(height: 8.0),
+    //                   Text
+    //                   (
+    //                     formatter.format(product.price),
+    //                     style: theme.textTheme.titleSmall,
+    //                   ),
+    //                 ],
+    //               ),
+    //             ),
+    //           ),
+    //         ],
+    //       ),
+    //     );
+    //   }
+    // ).toList();
+    return products.toList();
   }
 
 

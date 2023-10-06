@@ -17,6 +17,14 @@ class _CodeLab1State extends State<CodeLab1>
   final _usernameController = TextEditingController();
   final _passwordController = TextEditingController();
 
+  bool showPassword = false;
+  @override 
+  void initState()
+  { 
+    super.initState(); 
+    showPassword = true; 
+  } 
+
   @override
   Widget build(BuildContext context)
   {
@@ -58,12 +66,28 @@ class _CodeLab1State extends State<CodeLab1>
             TextField
             (
               controller: _passwordController,
-              decoration: const InputDecoration
+              obscureText: showPassword,
+              decoration: InputDecoration
               (
                 filled: true,
                 labelText: 'Password',
+                suffixIcon: IconButton
+                ( 
+                  icon: Icon
+                  (
+                    showPassword ? Icons.visibility : Icons.visibility_off,
+                  ),
+                  onPressed: ()
+                  {
+                    setState
+                    (()
+                      {
+                        showPassword = !showPassword;
+                      },
+                    );
+                  },
+                ),
               ),
-              obscureText: true,
             ),
             const SizedBox(height: 50.0),
             OverflowBar

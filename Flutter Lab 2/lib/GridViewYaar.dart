@@ -1,8 +1,10 @@
 
-// import 'dart:convert';
-// import 'package:http/http.dart' as http;
+import 'package:flutter/material.dart';
+import 'package:flutter_application_1/main.dart';
+import 'dart:convert';
+import 'package:http/http.dart' as http;
 
-// //Async and future are important keywords because we don't return data until it has been received and we don't know when it will be received
+// // //Async and future are important keywords because we don't return data until it has been received and we don't know when it will be received
 // Future <List<Users>> fetchUsers() async
 // {
 //   final response = await http.get(Uri.parse('https://jsonplaceholder.typicode.com/albums'));
@@ -24,9 +26,6 @@
 //     throw Exception('Failed to load users');
 //   }
 // }
-
-import 'package:flutter/material.dart';
-import 'package:flutter_application_1/main.dart';
 
 void main() => runApp(const MyApp());
 
@@ -170,7 +169,23 @@ class _YeAikStatefulWidgetHaiState extends State<YeAikStatefulWidgetHai>
   }
 }
 
-Future<List<Users>> fetchUsersInGrid async
-(
-  final response = await (Uri.parse("https://jsonplaceholder.typicode.com/albums"));
-)
+Future<List<Users>> fetchUsersInGrid() async
+{
+  final response = await http.get(Uri.parse('https://jsonplaceholder.typicode.com/albums'));
+  if (response.statusCode == 200)
+  {
+    List<dynamic> _parsedList = jsonDecode(response.body);
+    List<Users> _itemsList = List<Users>.from
+    (
+      _parsedList.map<Users>
+      (
+        (dynamic i) => Users.fromJson(i)
+      )
+    );
+    return _itemsList;
+  }
+  else
+  {
+    throw Exception('Failed to load users');
+  }
+}

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/FlutterLab3.dart';
+import 'package:flutter_application_1/FlutterLab3home.dart';
 import 'package:flutter_application_1/Widget/LoginScreen.dart';
 import 'package:flutter_application_1/Widget/NumrahKeypad.dart';
 import 'package:flutter_application_1/Widget/buttons.dart';
@@ -29,7 +30,8 @@ class MyApp extends StatelessWidget {
       // home: const ListWidget(),
       // home: const LoginScreen(),
       // home: KoiBhiStatefulWidget(),
-      home: CodeLab1(),
+      // home: CodeLab1(),
+      home: const HomePage(),
     );
   }
 }

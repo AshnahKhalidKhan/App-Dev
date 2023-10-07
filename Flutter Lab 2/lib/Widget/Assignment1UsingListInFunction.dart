@@ -76,7 +76,7 @@ class _Assignment1State extends State<Assignment1>
           {
             if (snapashot.hasData)
             {
-              return _buildingGridUsingComments(snapashot.data!);
+              return _buildingListUsingComments(snapashot.data!);
             }
             else if (snapashot.hasError)
             {
@@ -113,7 +113,7 @@ Future<List<Comments>> fetchComments() async
 }
 
 
-ListView _buildingGridUsingComments(List<Comments> comment)
+ListView _buildingListUsingComments(List<Comments> comment)
 {
   return ListView.builder
   (

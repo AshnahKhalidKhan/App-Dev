@@ -264,8 +264,8 @@ ListView _buildingAPIDataModelInList(List<APIDataModel> photos)
                                           child: Column
                                           (
                                             children: [
-                                              Text(photos[i].name.toString()),
-                                              Wrap(children: [Text(photos[i].description.toString())])
+                                              
+                                              Wrap(children: [Text(photos[i].name.toString()),Text(photos[i].description.toString(), style: TextStyle(color: Colors.grey),)])
                                               ]
                                           )
                                         ),

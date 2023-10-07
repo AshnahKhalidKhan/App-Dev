@@ -1,66 +1,3 @@
-//       body: Center
-//       (
-//         child: FutureBuilder<List<Comments>>
-//         (
-//           future: fetchComments(),
-//           builder: (context, snapshot)
-//           {
-//             if (snapshot.hasData)
-//             {
-//               return ListView.builder
-//               (
-//                 itemCount: snapshot.data?.length,
-//                 itemBuilder: (context, i)
-//                 {
-//                   var item = snapshot.data![i];
-//                   // return Text(item.title);
-//                   return Card
-//                   (
-//                     shape: RoundedRectangleBorder
-//                     (
-//                       borderRadius: BorderRadius.circular(8.0),
-//                     ),
-//                     color: Colors.blue,
-//                     child: ListTile
-//                     (
-//                       leading: const Icon
-//                       (
-//                         Icons.add_circle_outline_rounded,
-//                         size: 50,
-//                         color: Colors.white,
-//                       ),
-//                       title: Text
-//                       (
-//                         item.body,
-//                         overflow: TextOverflow.visible,
-//                         textAlign: TextAlign.center,
-//                         style: const TextStyle
-//                         (
-//                           color: Colors.white,
-//                           fontSize: 20,
-//                           overflow: TextOverflow.visible,
-//                         ),
-//                       ),
-//                     ),
-//                   );
-//                 },
-//               );
-//             }
-//             else if (snapshot.hasError)
-//             {
-//               return Text('${snapshot.error}');
-//             }
-//             else
-//             {
-//               return const CircularProgressIndicator();
-//             }
-//           }
-//         )
-//       ),
-//     );
-//   }
-// }
-
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/main.dart';
 import 'package:http/http.dart' as http;
@@ -100,15 +37,15 @@ class Comments
 
 void main() => runApp(const MyApp());
 
-class Assignment1 extends StatefulWidget
+class Assignment1UsingGridInFunction extends StatefulWidget
 {
-  const Assignment1({super.key});
+  const Assignment1UsingGridInFunction({super.key});
 
   @override
-  State<Assignment1> createState() => _Assignment1State();
+  State<Assignment1UsingGridInFunction> createState() => _Assignment1UsingGridInFunctionState();
 }
 
-class _Assignment1State extends State<Assignment1>
+class _Assignment1UsingGridInFunctionState extends State<Assignment1UsingGridInFunction>
 {
   @override
   Widget build(BuildContext context)

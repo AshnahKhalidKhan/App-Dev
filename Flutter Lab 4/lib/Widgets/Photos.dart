@@ -245,26 +245,30 @@ ListView _buildList(List<Maybelline> snapashot)
                       ),
                       Row
                       (
-                        
                         mainAxisAlignment: MainAxisAlignment.end,
-                        children: snapashot[i].productColors!.map((productColorsList)
-                        {
-                          return Wrap
-                          (
-                            children:
-                            [
-                              CircleAvatar
-                              (
-                                backgroundColor: Color
-                                (
-                                  int.parse((productColorsList.hexValue.toString()).replaceAll("#", "0xFF"))
-                                ),
-                              ),
-                              SizedBox(width: 5.0),
-                            ] 
-                          );
-                        }).toList(),
+                        children: _buildColorCircles(snapashot[i].productColors!),
                       ),
+                      // Row
+                      // (
+                      //   mainAxisAlignment: MainAxisAlignment.end,
+                      //   children: snapashot[i].productColors!.map((productColorsList)
+                      //   {
+                      //     return Wrap
+                      //     (
+                      //       children:
+                      //       [
+                      //         CircleAvatar
+                      //         (
+                      //           backgroundColor: Color
+                      //           (
+                      //             int.parse((productColorsList.hexValue.toString()).replaceAll("#", "0xFF"))
+                      //           ),
+                      //         ),
+                      //         SizedBox(width: 5.0),
+                      //       ] 
+                      //     );
+                      //   }).toList(),
+                      // ),
                       // Text(snapashot[i].productColors?[0].hexValue.toString() ?? "", style: TextStyle(color: Colors.red)),
                       // if (snapashot[i].productColors!.isNotEmpty)
                       // {
@@ -292,6 +296,27 @@ ListView _buildList(List<Maybelline> snapashot)
       );
     }
   );
+}
+
+List<Wrap> _buildColorCircles(List<ProductColors> productColorsArray)
+{
+  return productColorsArray.map((productColorsList)
+  {
+    return Wrap
+    (
+      children:
+      [
+        CircleAvatar
+        (
+          backgroundColor: Color
+          (
+            int.parse((productColorsList.hexValue.toString()).replaceAll("#", "0xFF"))
+          ),
+        ),
+        SizedBox(width: 5.0),
+      ] 
+    );
+  }).toList();
 }
 
 // GridView _f1(List<ProductColors> a)

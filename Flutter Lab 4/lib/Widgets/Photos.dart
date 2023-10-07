@@ -215,23 +215,99 @@ ListView _buildList(List<Maybelline> snapashot)
             context: context,
             builder: (BuildContext context)
             {
-              return Column
+              return SizedBox
               (
-                children:
-                [
-                  Image.network(snapashot[i].imageLink.toString()),
-                  Text(snapashot[i].name.toString()),
-                  Text(snapashot[i].description.toString()),
-                  Text("\$" + snapashot[i].price.toString()),
-                  Text(snapashot[i].rating.toString()),
-                  Text(snapashot[i].productType.toString()),
-                  Text(snapashot[i].productColors.toString()),
-                ]
+                width: double.maxFinite,
+                child: Padding
+                (
+                  padding: EdgeInsets.all(10.0),
+                  child: Wrap
+                  (
+                    children:
+                    [
+                      ListTile
+                      (
+                        leading: Image.network(snapashot[i].imageLink.toString()),
+                        title: Text(snapashot[i].name.toString()),
+                        subtitle: Text(snapashot[i].description.toString()),
+                      ),
+                      ListTile
+                      (
+                        titleAlignment: ListTileTitleAlignment.center,
+                        leading: Text("Brand: " + snapashot[i].brand.toString().toUpperCase(), style: TextStyle(color: Colors.red)),
+                        trailing: Text("Price: \$" + snapashot[i].price.toString(), style: TextStyle(color: Colors.green)),
+                      ),
+                      ListTile
+                      (
+                        titleAlignment: ListTileTitleAlignment.center,
+                        leading: Text("Product type: " + snapashot[i].productType.toString().toUpperCase(), style: TextStyle(color: Colors.green)),
+                        trailing: Text("Rating: " + snapashot[i].rating.toString(), style: TextStyle(color: Colors.blue)),
+                      ),
+                      Row
+                      (
+                        
+                        mainAxisAlignment: MainAxisAlignment.end,
+                        children: snapashot[i].productColors!.map((productColorsList)
+                        {
+                          return Wrap
+                          (
+                            children:
+                            [
+                              CircleAvatar
+                              (
+                                backgroundColor: Color
+                                (
+                                  int.parse((productColorsList.hexValue.toString()).replaceAll("#", "0xFF"))
+                                ),
+                              ),
+                              SizedBox(width: 5.0),
+                            ] 
+                          );
+                        }).toList(),
+                      ),
+                      // Text(snapashot[i].productColors?[0].hexValue.toString() ?? "", style: TextStyle(color: Colors.red)),
+                      // if (snapashot[i].productColors!.isNotEmpty)
+                      // {
+                      //   // _f1(snapashot[i].productColors!),
+
+                      // }
+                      // GridView.builder
+                      // (
+                      //   gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2),
+                      //   itemCount: snapashot[i].productColors!.length,
+                      //   itemBuilder: (context, j)
+                      //   {
+                      //     // return CircleAvatar(backgroundColor: Color(int.parse((snapashot[i].productColors!?[j].hexValue.toString() ?? "").replaceAll("#", "0xFF"))),);
+                      //     return Text(snapashot[i].productColors!?[j].hexValue.toString() ?? "");
+                      //   },
+                      // ),
+                    ]
+                  )
+                )
               );
-            }
+            },
+            shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20.0)),
           );
         },
       );
     }
   );
 }
+
+// GridView _f1(List<ProductColors> a)
+// {
+//   if (a.length == 0)
+//   {
+//     return GridView(gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 0),);
+//   }
+//   GridView f = GridView.builder
+//     (
+//       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: a.length),
+//       itemBuilder: (context, i) {
+//         return CircleAvatar(backgroundColor: Color(int.parse((a?[i].hexValue.toString() ?? "").replaceAll("#", "0xFF"))),);
+//       },
+
+//     );
+//   return f;
+//   // return Text(a?[0].hexValue.toString() ?? "", style: TextStyle(color: Colors.red));
+// }

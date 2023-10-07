@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_quiz_mock_midterm/Widgets/Photos.dart';
 
-void main() {
+void main()
+{
   runApp(const MainApp());
 }
 

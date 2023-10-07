@@ -118,7 +118,7 @@ class _Assignment1State extends State<Assignment1>
       appBar: AppBar
       (
         backgroundColor: Colors.blue,
-        title: const Text("Assignment 1"),
+        title: const Text("Assignment 1 With Grid In Function"),
       ),
       body: Center
       (
@@ -129,47 +129,7 @@ class _Assignment1State extends State<Assignment1>
           {
             if (snapashot.hasData)
             {
-              return GridView.builder
-              (
-                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2),
-                itemBuilder: (context, int i)
-                {
-                  return GridTile
-                  (
-                    child: Card
-                    (
-                      child: Column
-                      (
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        children: <Widget>
-                        [
-                          Container
-                          (
-                            alignment: Alignment.center,
-                            width: 50,
-                            height: 50,
-                            decoration: const BoxDecoration
-                            (
-                              shape: BoxShape.circle,
-                              color: Colors.blue,
-                            ),
-                            child: Text
-                            (
-                              snapashot.data![i].id.toString()
-                            ),
-                          ),
-                          Text
-                          (
-                            snapashot.data![i].name,
-                            textAlign: TextAlign.center,
-                          ),
-                        ],
-                      ),
-                    ),
-                  );
-                }
-              );
+              return _buildingGridUsingComments(snapashot.data!);
             }
             else if (snapashot.hasError)
             {
@@ -203,4 +163,51 @@ Future<List<Comments>> fetchComments() async
   {
     throw Exception('API nahin connect hui');
   }
+}
+
+
+GridView _buildingGridUsingComments(List<Comments> comment)
+{
+  return GridView.builder
+  (
+    gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2),
+    itemCount: comment.length,
+    itemBuilder: (context, int i)
+    {
+      return GridTile
+      (
+        child: Card
+        (
+          child: Column
+          (
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: <Widget>
+            [
+              Container
+              (
+                alignment: Alignment.center,
+                width: 50,
+                height: 50,
+                decoration: const BoxDecoration
+                (
+                  shape: BoxShape.circle,
+                  color: Colors.grey,
+                ),
+                child: Text
+                (
+                  comment[i].id.toString()
+                ),
+              ),
+              Text
+              (
+                comment[i].name,
+                textAlign: TextAlign.center,
+              ),
+            ],
+          ),
+        ),
+      );
+    }
+  );
 }

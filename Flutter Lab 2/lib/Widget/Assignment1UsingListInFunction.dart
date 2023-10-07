@@ -142,36 +142,36 @@ ListView _buildingGridUsingComments(List<Comments> comment)
           color: Colors.grey
         ),
         onTap: ()
-        // {
-        //   // print('Heyyyyy');
-        //   showModalBottomSheet(context: context, builder: builder)
-        // },
         {
+          // print('Heyyyyy');
           showModalBottomSheet<void>
           (
-            
             context: context,
             builder: (BuildContext context)
             {
-              return Wrap
+              return SizedBox
               (
-                children:
-                [
-                  Padding
-                  (
-                    padding: EdgeInsets.all(20.0),
-                    child: Column
+                width: double.maxFinite,
+                child: Wrap
+                (
+                  children:
+                  [
+                    Padding
                     (
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: <Widget>
-                      [
-                        Text('Name:' + comment[i].name),
-                        Text('Email:' + comment[i].email),
-                        Text('Bpdy:' + comment[i].body),
-                      ]
+                      padding: EdgeInsets.all(20.0),
+                      child: Column
+                      (
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: <Widget>
+                        [
+                          Text('Name: ' + comment[i].name),
+                          Text('Email: ' + comment[i].email),
+                          Text('Bpdy: ' + comment[i].body),
+                        ]
+                      )
                     )
-                  )
-                ]
+                  ]
+                )
               );
             }
           );

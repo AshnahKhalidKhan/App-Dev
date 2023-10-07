@@ -22,7 +22,8 @@ class MainApp extends StatelessWidget
       //     child: Text('Hello World!'),
       //   ),
       // ),
-      home: PhotosWidget(),
+      // home: PhotosWidget(),
+      home: APIDataModelWidget(),
     );
   }
 }

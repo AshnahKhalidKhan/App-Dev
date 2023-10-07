@@ -159,7 +159,11 @@ class _Assignment1State extends State<Assignment1>
                               snapashot.data![i].id.toString()
                             ),
                           ),
-                          Text(snapashot.data![i].name),
+                          Text
+                          (
+                            snapashot.data![i].name,
+                            textAlign: TextAlign.center,
+                          ),
                         ],
                       ),
                     ),

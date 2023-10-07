@@ -36,6 +36,52 @@ class Photos
   }
 }
 
+class PhotosWidget extends StatefulWidget
+{
+  const PhotosWidget({super.key});
+
+  @override
+  State<PhotosWidget> createState() => _PhotosWidgetState();
+}
+
+class _PhotosWidgetState extends State<PhotosWidget>
+{
+  @override
+  Widget build(BuildContext context)
+  {
+    return Scaffold
+    (
+      appBar: AppBar
+      (
+        backgroundColor: Colors.purple,
+        title: Text('Quizzzzzzzzzzzzzzzzzz'),
+      ),
+      body: SafeArea
+      (
+        child: FutureBuilder
+        (
+          future: fetchPhotos(),
+          builder: (context, snapashot)
+          {
+            if (snapashot.hasData)
+            {
+              return _buildingPhotosInList(snapashot.data!);
+            }
+            else if (snapashot.hasError)
+            {
+              return Text('$snapashot.error');
+            }
+            else
+            {
+              return CircularProgressIndicator();
+            }
+          }
+        ),
+      ),
+    );
+  }
+}
+
 Future<List<Photos>> fetchPhotos() async
 {
   final response = await http.get(Uri.parse('https://jsonplaceholder.typicode.com/photos'));
@@ -54,14 +100,24 @@ Future<List<Photos>> fetchPhotos() async
   }
 }
 
-ListView fetchPhotosInList(List<Photos> photos)
+ListView _buildingPhotosInList(List<Photos> photos)
 {
   return ListView.builder
   (
     itemCount: photos.length,
     itemBuilder: (context, i)
     {
-
+      return ListTile
+      (
+        leading: CircleAvatar
+        (
+          backgroundColor: Colors.black, 
+          child: Image.network
+          (
+            photos[i].thumbnailUrl
+          )
+        ),
+      );
     }
   );
 }

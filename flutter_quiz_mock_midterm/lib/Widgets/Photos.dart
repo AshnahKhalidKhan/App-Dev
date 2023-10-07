@@ -258,15 +258,44 @@ ListView _buildingAPIDataModelInList(List<APIDataModel> photos)
                                     (
                                       children:
                                       [
-                                        SizedBox
+                                        Container
                                         (
                                           
                                           child: Column
                                           (
-                                            children: [
-                                              
-                                              Wrap(children: [Text(photos[i].name.toString()),Text(photos[i].description.toString(), style: TextStyle(color: Colors.grey),)])
-                                              ]
+                                            crossAxisAlignment: CrossAxisAlignment.start,
+                                            children:
+                                            [
+                                              // Wrap
+                                              // (
+                                              //   children:
+                                              //   [
+                                                  SizedBox
+                                                  (
+                                                    width: MediaQuery.sizeOf(context).height,
+                                                    child: Text
+                                                    (
+                                                      photos[i].name.toString(),
+                                                      style: TextStyle
+                                                      (
+                                                        color: Colors.black,
+                                                      ),
+                                                    ),
+                                                  ),
+                                                  SizedBox
+                                                  (
+                                                    child: Text
+                                                    (
+                                                      photos[i].description.toString(),
+                                                      style: TextStyle
+                                                      (
+                                                        color: Colors.grey,
+                                                      ),
+                                                    ),
+                                                  ),
+                                              //   ]
+                                              // )
+                                            ]
                                           )
                                         ),
                                         // Text
